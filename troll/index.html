@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troll</title>
+    <style>
+        #canvas {
+            width: 80vw;
+            height: 40vw;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas">Sorry, this cannot be run because your browser does not support the &lt;canvas&gt;
+        element</canvas>
+    <script>
+        function isIntersect(point, circle) {
+            return Math.sqrt((point.x - circle.x) ** 2 + (point.y - circle.y) ** 2) < circle.radius;
+        }
+
+        function get(id) { return document.getElementById(id); }
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+
+            while (currentIndex != 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+            }
+
+            return array;
+        }
+        var canvas = get('canvas'),
+            ctx = canvas.getContext('2d'),
+            enemies = 2,
+            choices = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+        shapes = choices.map((curr, index) => {
+            return { color: curr, coordinates: {x: (250 / (choices.length + 0.25)) * (index + 1), y: 60 }}
+        })
+       
+        const show = () => {
+            const arr = shuffle(choices)
+            choices.forEach((curr, index) => {
+                ctx.fillStyle = curr;
+                ctx.fillRect((250 / (choices.length + 0.25)) * (index + 1), 60, 1, 1)
+            })
+          
+            setTimeout(() => {
+                console.log('erase')
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }, 1000)
+        }
+        const areyouready = confirm('ARE YA READY')
+        if (areyouready) {
+            setInterval(show, 3000)
+        }
+    </script>
+</body>
+
+</html>
