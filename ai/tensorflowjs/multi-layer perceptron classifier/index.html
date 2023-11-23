@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello World - TensorFlow.js</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Import the webpage's stylesheet -->
+        <link rel="stylesheet" type="text/css" href="./style.css">
+    </head>
+    <body>
+        <h1>TensorFlow.js MNIST classifier</h1>
+
+        <p>see console for more outputs</p>
+
+        <section class="box">
+            <h2>Input Image</h2>
+            <p>input image 28x28 grayscale image from MNIST dataset. REAL!!!</p>
+            <canvas id="canvas" width="28" height="28"></canvas>
+        </section>
+        <section class="bod">
+            <h2>prediction</h2>
+            <p>the prediction of the model</p>
+            <p>red is wrong green is right</p>
+            <p id="prediction">Training model, please wait</p>
+        </section>
+
+        <!-- Import TensorFlow.js library -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"
+            type="text/javascript"></script>
+
+        <!-- Import the page's JavaScript to do some stuff -->
+        <script type="module" src="./script.js"></script>
+    </body>
+</html>
