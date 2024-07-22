@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+
+}
+
+.App-intro {
+  background-color: #282c34;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  box-shadow: #282c34;
+}
+
+.video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bigtext{
+  position: absolute;
+  color: white;
+  font-size:3em;
+  padding: 2em;
+}
